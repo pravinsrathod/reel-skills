@@ -12,7 +12,7 @@ It follows the explainer format many Indian creators use: **3 problems → "main
 
 ```bash
 npx skills add heygen-com/hyperframes        # prerequisite: HyperFrames + media-use
-npx skills add pranjalrathod/reel-skills     # this skill
+npx skills add pravinsrathod/reel-skills     # this skill
 ```
 
 You also need:
