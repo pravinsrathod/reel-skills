@@ -1,6 +1,6 @@
 # reel-skills
 
-Agent skills for making short-form video.
+Agent skills for making short-form video, by [Pranjal Rathod](#made-by).
 
 ## hinglish-reel
 
@@ -47,3 +47,13 @@ skills/hinglish-reel/
 ### Credits
 
 Three bundled sound effects are CC BY. When you publish a reel that uses them, add this line to the post: `Sounds: InspectorJ, Brsjak, aropson (freesound.org, CC BY)`. Details in `skills/hinglish-reel/assets/sfx/CREDITS.md`.
+
+## Made by
+
+**Pranjal Rathod**, freelance developer and the maker of [ProAiBot](https://proaibot.0209ai.com), AI customer support on WhatsApp.
+
+- Instagram: [@0209ai_official](https://www.instagram.com/0209ai_official/)
+- ProAiBot: [proaibot.0209ai.com](https://proaibot.0209ai.com)
+- GitHub: [@pravinsrathod](https://github.com/pravinsrathod)
+
+**Hire me:** want a Hinglish reel series for your business, a custom version of this skill, or an app like the ones in the reels? DM [@0209ai_official](https://www.instagram.com/0209ai_official/) on Instagram.
