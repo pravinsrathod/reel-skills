@@ -72,5 +72,6 @@ p1	Pehli: kaagaz ke token kho jaate hain, aur printer ka kharcha alag.	पहल
 | `hook.icon` | `ticket`, `scissors`, `store`, `phone`, `chat`, `clinic`, `rupee`, or raw SVG path markup on a 24×24 grid. |
 | `*_word` keys | A caption word (case and punctuation ignored, prefix match) whose spoken time the animation lands on. If it isn't found the script says so and uses a default. |
 | `presenter.photo_crop` | ffmpeg `w:h:x:y` square around the face. Without it, a top-aligned centre square is used, which suits most portraits. |
+| `reveal.word` / `word_accent` | Printed back to back, so a two-word name needs a trailing space in `word` (`"Hinglish "` + `"Reel"`); a one-word mark like `"Pro"` + `"AiBot"` needs none. |
 | `reveal.type` | `brand` (logo + wordmark + chip) for a product; `text` (`line`, `big`, `big_word`) for an idea ("ISKA SOLUTION? / EK APP"). |
 | `sfx` | Extra hits. `at` is scene-local seconds, or `word` lands it on a caption word. Whooshes on cuts and the hook impact are added for you. |
