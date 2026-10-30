@@ -1,0 +1,135 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      color: #fff;
+      font-family: "Inter", sans-serif;
+    }
+    #p3-in {
+      position: absolute;
+      inset: 0;
+    }
+    #p3-title {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 300px;
+      text-align: center;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 104px;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    #p3-title span {
+      color: #ff5a5f;
+    }
+    #p3-card {
+      position: absolute;
+      left: 140px;
+      top: 500px;
+      width: 800px;
+      height: 600px;
+      border-radius: 36px;
+      background: #f5f7fa;
+      color: #0a1220;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+      overflow: hidden;
+    }
+    #p3-top {
+      height: 150px;
+      background: #22324f;
+      display: flex;
+      align-items: center;
+      padding-left: 40px;
+      gap: 28px;
+    }
+    #p3-avatar {
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      background: #3d4c68;
+      color: #9fb0cc;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 56px;
+      line-height: 92px;
+      text-align: center;
+    }
+    #p3-name {
+      color: #fff;
+      font-weight: 900;
+      font-size: 46px;
+    }
+    #p3-name small {
+      display: block;
+      font-family: "JetBrains Mono", monospace;
+      font-weight: 700;
+      font-size: 28px;
+      color: #9fb0cc;
+      letter-spacing: 0.08em;
+    }
+    .p3-field {
+      position: absolute;
+      left: 40px;
+      right: 40px;
+      height: 110px;
+      border-bottom: 3px solid #e1e6ee;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .p3-field b {
+      font-family: "JetBrains Mono", monospace;
+      font-weight: 700;
+      font-size: 30px;
+      color: #5a6a85;
+      letter-spacing: 0.06em;
+    }
+    .p3-q {
+      font-family: "Archivo Black", sans-serif;
+      font-size: 64px;
+      color: #ff5a5f;
+    }
+    #p3-think {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 1140px;
+      text-align: center;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 54px;
+      color: #9fb0cc;
+    }
+  </style>
+  <div id="root" data-composition-id="p3" data-width="1080" data-height="1920" data-layout-allow-overlap>
+    <div id="p3-clip" class="clip" data-start="0" data-duration="4.65">
+      <div id="p3-in">
+        <div id="p3-title">KOI <span>RECORD</span> NAHI</div>
+        <div id="p3-card">
+          <div id="p3-top">
+            <div id="p3-avatar">?</div>
+            <div id="p3-name">Customer<small>REGULAR? PATA NAHI</small></div>
+          </div>
+          <div class="p3-field" style="top: 170px"><b>LAST VISIT</b><span id="p3-q1" class="p3-q">?</span></div>
+          <div class="p3-field" style="top: 290px"><b>SERVICE</b><span id="p3-q2" class="p3-q">?</span></div>
+          <div class="p3-field" style="top: 410px"><b>STYLIST</b><span id="p3-q3" class="p3-q">?</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      // Voice: kaun@0.77 kab aaya@1.06, kaunsi service@1.53–2.1, kisi ko yaad nahi@2.96–4.0
+      tl.fromTo("#p3-title", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 0.05);
+      tl.fromTo("#p3-card", { opacity: 0, y: 200, rotation: 4 }, { opacity: 1, y: 0, rotation: -2, duration: 0.5, ease: "expo.out" }, 0.3);
+      [["#p3-q1", 1.06], ["#p3-q2", 1.6], ["#p3-q3", 2.2]].forEach(([q, t]) => {
+        tl.fromTo(q, { opacity: 0, scale: 2.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2.2)" }, t);
+      });
+      // Nobody remembers: the whole card shakes "no".
+      tl.fromTo("#p3-card", { x: 0 }, { x: -22, duration: 0.07, yoyo: true, repeat: 5, ease: "sine.inOut" }, 3.4);
+      tl.fromTo("#p3-in", { opacity: 1 }, { opacity: 0, duration: 0.2, ease: "power2.in" }, 4.43);
+      window.__timelines["p3"] = tl;
+    })();
+  </script>
+</template>

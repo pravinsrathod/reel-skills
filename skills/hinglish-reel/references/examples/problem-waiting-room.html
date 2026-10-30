@@ -1,0 +1,182 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      color: #fff;
+      font-family: "Inter", sans-serif;
+    }
+    #p2-in {
+      position: absolute;
+      inset: 0;
+    }
+    #p2-title {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 300px;
+      text-align: center;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 120px;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    #p2-title span {
+      color: #ff5a5f;
+    }
+    /* Wall clock */
+    #p2-clock {
+      position: absolute;
+      left: 790px;
+      top: 470px;
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      background: #f5f7fa;
+      border: 12px solid #2a3b5c;
+    }
+    .p2-hand {
+      position: absolute;
+      left: 50%;
+      bottom: 50%;
+      background: #0a1220;
+      border-radius: 4px;
+      transform-origin: 50% 100%;
+    }
+    #p2-hm {
+      width: 8px;
+      height: 70px;
+      margin-left: -4px;
+    }
+    #p2-hh {
+      width: 12px;
+      height: 46px;
+      margin-left: -6px;
+    }
+    /* Styling stations */
+    .p2-mirror {
+      position: absolute;
+      top: 470px;
+      width: 230px;
+      height: 280px;
+      border-radius: 115px 115px 16px 16px;
+      background: linear-gradient(160deg, #3a5378 0%, #22324f 60%, #4a6890 100%);
+      border: 10px solid #c9a86a;
+    }
+    .p2-chair {
+      position: absolute;
+      top: 690px;
+      width: 190px;
+      height: 170px;
+      border-radius: 30px 30px 14px 14px;
+      background: #2b2f3a;
+    }
+    .p2-busy {
+      position: absolute;
+      top: 640px;
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+    }
+    /* Waiting bench */
+    #p2-bench {
+      position: absolute;
+      left: 60px;
+      right: 60px;
+      top: 1040px;
+      height: 34px;
+      border-radius: 10px;
+      background: #8a5a35;
+    }
+    .p2-person {
+      position: absolute;
+      top: 850px;
+      width: 150px;
+      height: 200px;
+    }
+    .p2-head {
+      position: absolute;
+      left: 37px;
+      top: 0;
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: #d9a47c;
+    }
+    .p2-body {
+      position: absolute;
+      left: 10px;
+      top: 84px;
+      width: 130px;
+      height: 116px;
+      border-radius: 56px 56px 12px 12px;
+    }
+    #p2-bubble {
+      position: absolute;
+      left: 430px;
+      top: 650px;
+      padding: 20px 30px;
+      border-radius: 28px;
+      background: #f5f7fa;
+      color: #0a1220;
+      font-weight: 900;
+      font-size: 42px;
+      white-space: nowrap;
+    }
+    #p2-bubble span {
+      color: #d42f35;
+    }
+    #p2-loss {
+      position: absolute;
+      left: 760px;
+      top: 760px;
+      color: #ff5a5f;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 72px;
+    }
+  </style>
+  <div id="root" data-composition-id="p2" data-width="1080" data-height="1920" data-layout-allow-overlap>
+    <div id="p2-clip" class="clip" data-start="0" data-duration="4.49">
+      <div id="p2-in">
+        <div id="p2-title">INTE<span>ZAAR</span></div>
+        <div id="p2-m1" class="p2-mirror" style="left: 90px"></div>
+        <div id="p2-m2" class="p2-mirror" style="left: 420px"></div>
+        <div class="p2-chair" style="left: 110px"></div>
+        <div class="p2-chair" style="left: 440px"></div>
+        <div class="p2-busy" style="left: 157px; background: #c98d63"></div>
+        <div class="p2-busy" style="left: 487px; background: #8f6046"></div>
+        <div id="p2-clock">
+          <div id="p2-hh" class="p2-hand"></div>
+          <div id="p2-hm" class="p2-hand"></div>
+        </div>
+        <div id="p2-bench"></div>
+        <div id="p2-w1" class="p2-person" style="left: 90px"><div class="p2-head"></div><div class="p2-body" style="background: #6c5ce7"></div></div>
+        <div id="p2-w2" class="p2-person" style="left: 300px"><div class="p2-head" style="background: #b98260"></div><div class="p2-body" style="background: #e17055"></div></div>
+        <div id="p2-w3" class="p2-person" style="left: 510px"><div class="p2-head" style="background: #e0b18f"></div><div class="p2-body" style="background: #00a8a8"></div></div>
+        <div id="p2-w4" class="p2-person" style="left: 720px"><div class="p2-head" style="background: #a8724f"></div><div class="p2-body" style="background: #fdcb6e"></div></div>
+        <div id="p2-bubble">Mera number <span>kab aayega?</span></div>
+        <div id="p2-loss">-1 CUSTOMER</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      // Voice: walk-in@0.72, customer@1.24, wait@1.96, karte karte@2.28–2.9, chala jaata hai@3.11–4.0
+      tl.fromTo("#p2-title", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 0.05);
+      ["#p2-w1", "#p2-w2", "#p2-w3", "#p2-w4"].forEach((w, i) => {
+        tl.fromTo(w, { opacity: 0, y: 120 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(1.8)" }, 0.7 + i * 0.12);
+      });
+      tl.fromTo("#p2-clock", { scale: 0 }, { scale: 1, duration: 0.35, ease: "back.out(2.2)" }, 1.9);
+      tl.fromTo("#p2-hm", { rotation: 0 }, { rotation: 1440, duration: 1.6, ease: "power1.inOut" }, 2.0);
+      tl.fromTo("#p2-hh", { rotation: 60 }, { rotation: 180, duration: 1.6, ease: "power1.inOut" }, 2.0);
+      tl.fromTo("#p2-bubble", { opacity: 0, scale: 0.5, transformOrigin: "80% 100%" }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.2)" }, 2.1);
+      // The last customer gets up and walks out of frame.
+      tl.fromTo("#p2-w4", { x: 0, y: 0 }, { x: 0, y: -30, duration: 0.18, ease: "power2.out" }, 3.1);
+      tl.fromTo("#p2-w4", { x: 0 }, { x: 520, duration: 0.7, ease: "power2.in", immediateRender: false }, 3.28);
+      tl.fromTo("#p2-loss", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "expo.out" }, 3.55);
+      tl.fromTo("#p2-in", { opacity: 1 }, { opacity: 0, duration: 0.2, ease: "power2.in" }, 4.27);
+      window.__timelines["p2"] = tl;
+    })();
+  </script>
+</template>

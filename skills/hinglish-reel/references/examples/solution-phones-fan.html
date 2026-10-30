@@ -1,0 +1,239 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      color: #fff;
+      font-family: "Inter", sans-serif;
+    }
+    #recep-in {
+      position: absolute;
+      inset: 0;
+    }
+    #recep-head {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 290px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 22px;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 76px;
+      letter-spacing: -0.01em;
+    }
+    #recep-badge {
+      width: 90px;
+      height: 90px;
+      border-radius: 20px;
+      background: #3dff8f;
+      color: #0a1220;
+      text-align: center;
+      line-height: 90px;
+    }
+    .recep-phone {
+      position: absolute;
+      top: 430px;
+      width: 340px;
+      height: 680px;
+      border-radius: 56px;
+      background: #05080f;
+      padding: 12px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+    }
+    .recep-screen {
+      width: 100%;
+      height: 100%;
+      border-radius: 44px;
+      background: #f5f7fa;
+      color: #0a1220;
+      overflow: hidden;
+    }
+    .recep-bar {
+      padding: 40px 26px 22px;
+      background: #128a4e;
+      color: #fff;
+      font-weight: 900;
+      font-size: 34px;
+    }
+    .recep-bar small {
+      display: block;
+      font-weight: 700;
+      font-size: 20px;
+      opacity: 0.85;
+    }
+    .recep-slot {
+      margin: 14px 16px 0;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: #fff;
+      border-left: 8px solid #128a4e;
+      font-weight: 900;
+      font-size: 24px;
+    }
+    .recep-slot i {
+      display: block;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 19px;
+      color: #5a6a85;
+    }
+    .recep-free {
+      border-left-color: #c8d1de;
+      color: #8a97ab;
+    }
+    #recep-now {
+      margin: 22px 16px 6px;
+      padding: 18px;
+      border-radius: 20px;
+      background: #0a1220;
+      color: #3dff8f;
+      text-align: center;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 54px;
+    }
+    #recep-now small {
+      display: block;
+      font-family: "Inter", sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: #9fb0cc;
+      letter-spacing: 0.1em;
+    }
+    .recep-q {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 16px 0;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: #fff;
+      font-weight: 900;
+      font-size: 23px;
+    }
+    .recep-q span {
+      color: #128a4e;
+    }
+    #recep-search {
+      margin: 18px 16px 0;
+      padding: 14px 18px;
+      border-radius: 14px;
+      border: 3px solid #128a4e;
+      background: #fff;
+      font-weight: 700;
+      font-size: 24px;
+      color: #0a1220;
+      height: 62px;
+    }
+    #recep-result {
+      margin: 16px 16px 0;
+      padding: 18px;
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: 0 6px 18px rgba(10, 18, 32, 0.12);
+    }
+    #recep-result b {
+      display: block;
+      font-size: 28px;
+      font-weight: 900;
+    }
+    .recep-kv {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 12px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #5a6a85;
+    }
+    .recep-kv span {
+      color: #0a1220;
+      font-weight: 900;
+    }
+    .recep-label {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -58px;
+      text-align: center;
+      font-family: "JetBrains Mono", monospace;
+      font-weight: 700;
+      font-size: 28px;
+      letter-spacing: 0.1em;
+      color: #9fb0cc;
+    }
+    #recep-tag {
+      position: absolute;
+      right: 150px;
+      top: 1122px;
+      font-family: "JetBrains Mono", monospace;
+      font-weight: 700;
+      font-size: 22px;
+      color: #5d6f8e;
+    }
+  </style>
+  <div id="root" data-composition-id="recep" data-width="1080" data-height="1920" data-layout-allow-overlap>
+    <div id="recep-clip" class="clip" data-start="0" data-duration="6.02">
+      <div id="recep-in">
+        <div id="recep-head"><span>RECEPTION KE LIYE</span><div id="recep-badge">3</div></div>
+
+        <div id="recep-a" class="recep-phone" style="left: 370px">
+          <div class="recep-screen">
+            <div class="recep-bar">Online Booking<small>Aaj · Saturday</small></div>
+            <div class="recep-slot">10:00 Riya<i>Haircut · Aman</i></div>
+            <div class="recep-slot recep-free">11:30 Khaali<i>Book karo</i></div>
+            <div class="recep-slot">12:00 Sneha<i>Facial · Pooja</i></div>
+            <div class="recep-slot">1:30 Meena<i>Hair spa · Aman</i></div>
+            <div class="recep-slot recep-free">3:00 Khaali<i>Book karo</i></div>
+          </div>
+        </div>
+
+        <div id="recep-b" class="recep-phone" style="left: 370px" data-layout-allow-occlusion>
+          <div class="recep-screen">
+            <div class="recep-bar">Live Queue<small>Walk-in token</small></div>
+            <div id="recep-now"><small>ABHI CHAIR PE</small>#14</div>
+            <div class="recep-q">#15 Meena<span>5 min</span></div>
+            <div class="recep-q">#16 Anju<span>20 min</span></div>
+            <div class="recep-q">#17 Walk-in<span>35 min</span></div>
+          </div>
+        </div>
+
+        <div id="recep-c" class="recep-phone" style="left: 370px" data-layout-allow-occlusion>
+          <div class="recep-screen">
+            <div class="recep-bar">Customers<small>History</small></div>
+            <div id="recep-search">Search: <span id="recep-typed"></span></div>
+            <div id="recep-result">
+              <b>Riya Sharma</b>
+              <div class="recep-kv">Visits<span>12</span></div>
+              <div class="recep-kv">Last visit<span>18 Oct</span></div>
+              <div class="recep-kv">Service<span>Hair spa</span></div>
+              <div class="recep-kv">Stylist<span>Aman</span></div>
+            </div>
+          </div>
+        </div>
+        <div id="recep-tag">SAMPLE SCREENS</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      // Voice: reception@0.2, online booking@1.42, live queue@2.56, ek tap mein customer history@3.51–5.2
+      tl.fromTo("#recep-head", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 0.05);
+      tl.fromTo("#recep-badge", { scale: 0, rotation: -30 }, { scale: 1, rotation: 0, duration: 0.35, ease: "back.out(2.2)" }, 0.6);
+      // Booking lands centre, then is dealt left as the queue arrives; history lands on top, front and centre.
+      tl.fromTo("#recep-a", { opacity: 0, y: 700, x: 0, rotation: 0 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 1.35);
+      tl.fromTo("#recep-b", { opacity: 0, y: 700, x: 0, rotation: 0 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 2.5);
+      tl.fromTo("#recep-a", { x: 0, rotation: 0 }, { x: -250, rotation: -8, duration: 0.5, ease: "expo.out", immediateRender: false }, 2.5);
+      tl.fromTo("#recep-c", { opacity: 0, y: 700, x: 0, rotation: 0 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 3.45);
+      tl.fromTo("#recep-b", { x: 0, rotation: 0 }, { x: 220, rotation: 8, duration: 0.5, ease: "expo.out", immediateRender: false }, 3.45);
+      // "ek tap": the name types and the record pops.
+      const typed = { n: 0 };
+      tl.fromTo(typed, { n: 0 }, { n: 4, duration: 0.4, ease: "none", onUpdate: () => {
+        document.querySelector("#recep-typed").textContent = "Riya".slice(0, Math.round(typed.n));
+      } }, 3.8);
+      tl.fromTo("#recep-result", { opacity: 0, y: 30, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(2)" }, 4.3);
+      tl.fromTo("#recep-in", { opacity: 1 }, { opacity: 0, duration: 0.2, ease: "power2.in" }, 5.8);
+      window.__timelines["recep"] = tl;
+    })();
+  </script>
+</template>

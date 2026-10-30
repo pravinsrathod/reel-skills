@@ -1,0 +1,222 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      color: #fff;
+      font-family: "Inter", sans-serif;
+    }
+    #owner-in {
+      position: absolute;
+      inset: 0;
+    }
+    #owner-head {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 290px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 22px;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 76px;
+    }
+    #owner-badge {
+      width: 90px;
+      height: 90px;
+      border-radius: 20px;
+      background: #3dff8f;
+      color: #0a1220;
+      text-align: center;
+      line-height: 90px;
+    }
+    .owner-phone {
+      position: absolute;
+      top: 440px;
+      width: 370px;
+      height: 660px;
+      border-radius: 56px;
+      background: #05080f;
+      padding: 12px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+    }
+    .owner-screen {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 44px;
+      background: #f5f7fa;
+      color: #0a1220;
+      overflow: hidden;
+    }
+    .owner-bar {
+      padding: 40px 26px 22px;
+      background: #128a4e;
+      color: #fff;
+      font-weight: 900;
+      font-size: 34px;
+    }
+    .owner-bar small {
+      display: block;
+      font-weight: 700;
+      font-size: 20px;
+      opacity: 0.85;
+    }
+    #owner-total {
+      margin: 26px 24px 0;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 64px;
+      color: #0a1220;
+    }
+    #owner-total-l {
+      margin: 0 24px;
+      font-weight: 700;
+      font-size: 20px;
+      color: #5a6a85;
+      letter-spacing: 0.08em;
+    }
+    #owner-chart {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 60px;
+      height: 260px;
+      display: flex;
+      align-items: flex-end;
+      gap: 14px;
+    }
+    .owner-col {
+      flex: 1;
+      border-radius: 10px 10px 4px 4px;
+      background: #128a4e;
+      transform-origin: 50% 100%;
+    }
+    .owner-days {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 22px;
+      display: flex;
+      gap: 14px;
+      font-weight: 700;
+      font-size: 22px;
+      color: #5a6a85;
+    }
+    .owner-days span {
+      flex: 1;
+      text-align: center;
+    }
+    .owner-staff {
+      margin: 26px 24px 0;
+    }
+    .owner-staff b {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 900;
+      font-size: 26px;
+    }
+    .owner-track {
+      margin-top: 10px;
+      height: 22px;
+      border-radius: 11px;
+      background: #e1e6ee;
+      overflow: hidden;
+    }
+    .owner-fill {
+      height: 100%;
+      border-radius: 11px;
+      background: #128a4e;
+      transform-origin: 0% 50%;
+    }
+    #owner-note {
+      position: absolute;
+      left: 140px;
+      right: 140px;
+      top: 1000px;
+      padding: 22px 28px;
+      border-radius: 26px;
+      background: #f5f7fa;
+      color: #0a1220;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+    }
+    #owner-dot {
+      flex: none;
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      background: #128a4e;
+    }
+    #owner-note b {
+      display: block;
+      font-weight: 900;
+      font-size: 30px;
+    }
+    #owner-note i {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 22px;
+      color: #5a6a85;
+    }
+  </style>
+  <div id="root" data-composition-id="owner" data-width="1080" data-height="1920" data-layout-allow-overlap>
+    <div id="owner-clip" class="clip" data-start="0" data-duration="5.16">
+      <div id="owner-in">
+        <div id="owner-head"><span>MALIK KE LIYE</span><div id="owner-badge">2</div></div>
+
+        <div id="owner-a" class="owner-phone" style="left: 120px">
+          <div class="owner-screen">
+            <div class="owner-bar">Aaj ki Kamai<small>Roz ki report</small></div>
+            <div id="owner-total">₹<span id="owner-num">0</span></div>
+            <div id="owner-total-l">AAJ TAK · 23 CUSTOMERS</div>
+            <div id="owner-chart">
+              <div class="owner-col" style="height: 48%"></div>
+              <div class="owner-col" style="height: 62%"></div>
+              <div class="owner-col" style="height: 40%"></div>
+              <div class="owner-col" style="height: 74%"></div>
+              <div class="owner-col" style="height: 66%"></div>
+              <div class="owner-col" style="height: 100%; background: #0a1220"></div>
+            </div>
+            <div class="owner-days"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span></div>
+          </div>
+        </div>
+
+        <div id="owner-b" class="owner-phone" style="left: 540px">
+          <div class="owner-screen">
+            <div class="owner-bar">Staff Report<small>Aaj</small></div>
+            <div class="owner-staff"><b>Aman<span>9 clients</span></b><div class="owner-track"><div id="owner-f1" class="owner-fill" style="width: 100%"></div></div></div>
+            <div class="owner-staff"><b>Pooja<span>7 clients</span></b><div class="owner-track"><div id="owner-f2" class="owner-fill" style="width: 78%"></div></div></div>
+            <div class="owner-staff"><b>Ravi<span>5 clients</span></b><div class="owner-track"><div id="owner-f3" class="owner-fill" style="width: 56%"></div></div></div>
+            <div class="owner-staff"><b>Sana<span>2 clients</span></b><div class="owner-track"><div id="owner-f4" class="owner-fill" style="width: 22%"></div></div></div>
+          </div>
+        </div>
+
+        <div id="owner-note"><div id="owner-dot"></div><div><b>₹1,200 received</b><i>Meena · Hair spa · abhi</i></div></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      // Voice: malik@0.2, aaj ki kamai@1.19–1.98, staff ki report@2.18–3.5, seedha phone pe@3.67–4.6. Figures are sample data.
+      tl.fromTo("#owner-head", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 0.05);
+      tl.fromTo("#owner-badge", { scale: 0, rotation: -30 }, { scale: 1, rotation: 0, duration: 0.35, ease: "back.out(2.2)" }, 0.6);
+      tl.fromTo("#owner-a", { opacity: 0, y: 700, rotation: 0 }, { opacity: 1, y: 0, rotation: -4, duration: 0.5, ease: "expo.out" }, 1.0);
+      const money = { v: 0 };
+      tl.fromTo(money, { v: 0 }, { v: 18450, duration: 1.0, ease: "power2.out", onUpdate: () => {
+        document.querySelector("#owner-num").textContent = Math.round(money.v).toLocaleString("en-IN");
+      } }, 1.2);
+      tl.fromTo("#owner-a .owner-col", { scaleY: 0 }, { scaleY: 1, duration: 0.5, ease: "expo.out", stagger: 0.07 }, 1.3);
+      tl.fromTo("#owner-b", { opacity: 0, y: 700, rotation: 0 }, { opacity: 1, y: 0, rotation: 4, duration: 0.5, ease: "expo.out" }, 2.1);
+      ["#owner-f1", "#owner-f2", "#owner-f3", "#owner-f4"].forEach((f, i) => {
+        tl.fromTo(f, { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "expo.out" }, 2.5 + i * 0.1);
+      });
+      tl.fromTo("#owner-note", { opacity: 0, y: -80, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(2)" }, 3.65);
+      tl.fromTo("#owner-in", { opacity: 1 }, { opacity: 0, duration: 0.2, ease: "power2.in" }, 4.94);
+      window.__timelines["owner"] = tl;
+    })();
+  </script>
+</template>

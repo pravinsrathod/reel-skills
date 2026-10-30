@@ -1,0 +1,162 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      color: #fff;
+      font-family: "Inter", sans-serif;
+    }
+    #cta-in {
+      position: absolute;
+      inset: 0;
+    }
+    #cta-title {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 280px;
+      text-align: center;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 92px;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    #cta-free {
+      position: absolute;
+      left: 700px;
+      top: 905px;
+      padding: 8px 26px 12px;
+      border-radius: 18px;
+      background: #3dff8f;
+      color: #0a1220;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 70px;
+    }
+    #cta-doc {
+      position: absolute;
+      left: 230px;
+      top: 440px;
+      width: 620px;
+      height: 520px;
+      border-radius: 28px;
+      background: #f5f7fa;
+      color: #0a1220;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+      padding: 34px;
+    }
+    #cta-doc-h {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding-bottom: 22px;
+      border-bottom: 3px solid #e1e6ee;
+    }
+    #cta-doc-ic {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      background: #128a4e;
+    }
+    #cta-doc-h b {
+      display: block;
+      font-weight: 900;
+      font-size: 36px;
+    }
+    #cta-doc-h i {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 28px;
+      color: #5a6a85;
+    }
+    #cta-grid {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .cta-tile {
+      height: 132px;
+      border-radius: 14px;
+      background: #e8f8ef;
+      border: 3px solid #bfe9d0;
+      color: #128a4e;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 36px;
+      text-align: center;
+      line-height: 126px;
+    }
+    #cta-comment {
+      position: absolute;
+      left: 120px;
+      right: 160px;
+      top: 1010px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 22px;
+      border-radius: 50px;
+      background: #121d30;
+      border: 3px solid #2a3b5c;
+    }
+    #cta-av {
+      flex: none;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #3d4c68;
+    }
+    #cta-typed {
+      flex: 1;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 46px;
+      color: #3dff8f;
+      height: 56px;
+    }
+    #cta-ph {
+      font-family: "Inter", sans-serif;
+      font-weight: 700;
+      font-size: 30px;
+      color: #7d8fae;
+    }
+    #cta-post {
+      font-weight: 900;
+      font-size: 30px;
+      color: #3dff8f;
+    }
+  </style>
+  <div id="root" data-composition-id="cta" data-width="1080" data-height="1920" data-layout-allow-overlap>
+    <div id="cta-clip" class="clip" data-start="0" data-duration="4.42">
+      <div id="cta-in">
+        <div id="cta-title">POORA BLUEPRINT</div>
+        <div id="cta-doc">
+          <div id="cta-doc-h"><div id="cta-doc-ic"></div><div><b>Salon App Blueprint</b><i>8 screens · har screen ka kaam</i></div></div>
+          <div id="cta-grid">
+            <div class="cta-tile">1</div><div class="cta-tile">2</div><div class="cta-tile">3</div><div class="cta-tile">4</div>
+            <div class="cta-tile">5</div><div class="cta-tile">6</div><div class="cta-tile">7</div><div class="cta-tile">8</div>
+          </div>
+        </div>
+        <div id="cta-free">FREE</div>
+        <div id="cta-comment"><div id="cta-av"></div><div id="cta-typed"><span id="cta-ph">Comment karo...</span><span id="cta-word"></span></div><div id="cta-post">Post</div></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      // Voice: poora app blueprint@0.2–1.4, free chahiye@1.52, comment mein likho@2.3–3.1, SALON@3.15
+      tl.fromTo("#cta-title", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 0.05);
+      tl.fromTo("#cta-doc", { opacity: 0, y: 300, rotation: 6 }, { opacity: 1, y: 0, rotation: -2, duration: 0.5, ease: "expo.out" }, 0.4);
+      tl.fromTo("#cta-doc .cta-tile", { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(2.2)", stagger: 0.05 }, 0.7);
+      tl.fromTo("#cta-free", { opacity: 0, scale: 2.4, rotation: -14 }, { opacity: 1, scale: 1, rotation: 8, duration: 0.25, ease: "power4.in" }, 1.4);
+      tl.fromTo("#cta-comment", { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 2.2);
+      tl.set("#cta-ph", { display: "none" }, 3.1);
+      const typed = { n: 0 };
+      tl.fromTo(typed, { n: 0 }, { n: 5, duration: 0.35, ease: "none", onUpdate: () => {
+        document.querySelector("#cta-word").textContent = "SALON".slice(0, Math.round(typed.n));
+      } }, 3.1);
+      tl.fromTo("#cta-post", { scale: 1 }, { scale: 1.25, duration: 0.12, ease: "power2.out", yoyo: true, repeat: 1 }, 3.6);
+      tl.fromTo("#cta-in", { opacity: 1 }, { opacity: 0, duration: 0.2, ease: "power2.in" }, 4.2);
+      window.__timelines["cta"] = tl;
+    })();
+  </script>
+</template>

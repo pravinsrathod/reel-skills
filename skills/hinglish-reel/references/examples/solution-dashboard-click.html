@@ -1,0 +1,254 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      color: #fff;
+      font-family: "Inter", sans-serif;
+    }
+    #staff-in {
+      position: absolute;
+      inset: 0;
+    }
+    #staff-head {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 290px;
+      text-align: center;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 80px;
+    }
+    #staff-head span {
+      color: #f59e0b;
+    }
+    /* Queue Manager card, after AdminDashboard.jsx */
+    #staff-qm {
+      position: absolute;
+      left: 80px;
+      right: 80px;
+      top: 410px;
+      height: 470px;
+      border-radius: 28px;
+      background: #f8fafc;
+      color: #0f172a;
+      padding: 30px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+    }
+    #staff-qm-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    #staff-qm-top b {
+      font-weight: 800;
+      font-size: 34px;
+    }
+    #staff-reset {
+      padding: 12px 18px;
+      border-radius: 12px;
+      border: 2px solid #fecaca;
+      color: #dc2626;
+      font-weight: 700;
+      font-size: 22px;
+    }
+    #staff-call {
+      margin-left: 12px;
+      padding: 12px 20px;
+      border-radius: 12px;
+      background: #f59e0b;
+      color: #fff;
+      font-weight: 800;
+      font-size: 24px;
+    }
+    .staff-lbl {
+      margin-top: 24px;
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #64748b;
+    }
+    #staff-now {
+      position: relative;
+      margin-top: 10px;
+      height: 96px;
+      border-radius: 16px;
+      background: #eff6ff;
+      border: 2px solid #bfdbfe;
+      overflow: hidden;
+    }
+    .staff-row {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      top: 0;
+      height: 92px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-weight: 800;
+      font-size: 30px;
+    }
+    .staff-row small {
+      font-weight: 600;
+      font-size: 22px;
+      color: #64748b;
+    }
+    .staff-tok {
+      color: #2563eb;
+      font-size: 38px;
+    }
+    .staff-w {
+      margin-top: 10px;
+      height: 64px;
+      border-radius: 14px;
+      background: #fff;
+      border: 2px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 0 18px;
+      font-weight: 700;
+      font-size: 26px;
+    }
+    .staff-w i {
+      font-style: normal;
+      padding: 4px 10px;
+      border-radius: 8px;
+      background: #fef3c7;
+      color: #b45309;
+      font-size: 22px;
+    }
+    .staff-w em {
+      margin-left: auto;
+      font-style: normal;
+      font-size: 20px;
+      color: #047857;
+    }
+    #staff-cursor {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 56px;
+      height: 56px;
+    }
+    /* Mini TV and phone, updated by the same click */
+    #staff-tv {
+      position: absolute;
+      left: 80px;
+      top: 920px;
+      width: 470px;
+      height: 230px;
+      border-radius: 20px;
+      background: linear-gradient(160deg, #1e293b, #0f172a);
+      border: 10px solid #05080f;
+      padding: 18px 24px;
+    }
+    #staff-tv i {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 0.16em;
+      color: rgba(255, 255, 255, 0.55);
+    }
+    #staff-tv-card {
+      position: relative;
+      margin-top: 10px;
+      height: 130px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      overflow: hidden;
+    }
+    .staff-tv-n {
+      position: absolute;
+      inset: 0;
+      text-align: center;
+      font-weight: 900;
+      font-size: 84px;
+      line-height: 130px;
+    }
+    #staff-msg {
+      position: absolute;
+      left: 580px;
+      top: 920px;
+      width: 420px;
+      padding: 20px 22px;
+      border-radius: 24px;
+      background: #f5f7fa;
+      color: #111b21;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+    }
+    #staff-msg-app {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 20px;
+      color: #5a6a85;
+    }
+    #staff-msg-app div {
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: #25d366;
+    }
+    #staff-msg p {
+      margin-top: 8px;
+      font-weight: 600;
+      font-size: 26px;
+      line-height: 1.3;
+    }
+  </style>
+  <div id="root" data-composition-id="staff" data-width="1080" data-height="1920" data-layout-allow-overlap>
+    <div id="staff-clip" class="clip" data-start="0" data-duration="5.45">
+      <div id="staff-in">
+        <div id="staff-head">STAFF <span>KE LIYE</span></div>
+        <div id="staff-qm">
+          <div id="staff-qm-top"><b>Haircut Queue</b><div><span id="staff-reset">Reset Queue</span><span id="staff-call">Call Next Token</span></div></div>
+          <div class="staff-lbl">Now Serving</div>
+          <div id="staff-now">
+            <div id="staff-r1" class="staff-row"><span class="staff-tok">H-016</span>Arjun<small>Counter 1</small></div>
+            <div id="staff-r2" class="staff-row"><span class="staff-tok">H-017</span>Riya<small>Counter 1</small></div>
+          </div>
+          <div class="staff-lbl">Waiting</div>
+          <div id="staff-w1" class="staff-w"><i>#1</i>H-017 Riya<em>WhatsApp</em></div>
+          <div id="staff-w2" class="staff-w"><i>#2</i>H-018 Kabir<em>WhatsApp</em></div>
+        </div>
+        <svg id="staff-cursor" viewBox="0 0 24 24"><path d="M4 2 L4 20 L9 15 L12.5 22 L15.5 20.5 L12 14 L19 14 Z" fill="#0f172a" stroke="#fff" stroke-width="1.5" /></svg>
+        <div id="staff-tv">
+          <i>NOW SERVING</i>
+          <div id="staff-tv-card"><div id="staff-tv-1" class="staff-tv-n">H-016</div><div id="staff-tv-2" class="staff-tv-n">H-017</div></div>
+        </div>
+        <div id="staff-msg">
+          <div id="staff-msg-app"><div></div>WhatsApp · Glow Salon</div>
+          <p>📢 It's your turn!<br />Token: H-017<br />Please proceed at Counter 1.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      // Voice: staff ke liye@0.2–0.9, ek click@1.2, call next@1.7–2.2, TV@2.6, WhatsApp@3.1, dono update@3.7–4.8
+      tl.fromTo("#staff-head", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 0.05);
+      tl.fromTo("#staff-qm", { opacity: 0, y: 300 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 0.25);
+      tl.set("#staff-r2", { yPercent: 100 }, 0);
+      tl.set("#staff-tv-2", { yPercent: 100 }, 0);
+      // The cursor travels to Call Next Token and clicks on "click".
+      tl.fromTo("#staff-cursor", { opacity: 0, x: 560, y: 900 }, { opacity: 1, x: 860, y: 470, duration: 0.6, ease: "power2.inOut" }, 0.7);
+      tl.to("#staff-cursor", { scale: 0.8, duration: 0.08, yoyo: true, repeat: 1, ease: "power2.out" }, 1.4);
+      tl.to("#staff-call", { scale: 0.92, duration: 0.08, yoyo: true, repeat: 1, ease: "power2.out" }, 1.4);
+      tl.fromTo("#staff-r1", { yPercent: 0 }, { yPercent: -100, duration: 0.35, ease: "power3.inOut", immediateRender: false }, 1.6);
+      tl.fromTo("#staff-r2", { yPercent: 100 }, { yPercent: 0, duration: 0.35, ease: "power3.inOut", immediateRender: false }, 1.6);
+      tl.to("#staff-w1", { opacity: 0, x: -200, duration: 0.3, ease: "power2.in" }, 1.6);
+      tl.to("#staff-w2", { y: -74, duration: 0.35, ease: "power3.inOut" }, 1.85);
+      tl.fromTo("#staff-tv", { opacity: 0, y: 120 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 2.2);
+      tl.fromTo("#staff-tv-1", { yPercent: 0 }, { yPercent: -100, duration: 0.3, ease: "power3.inOut", immediateRender: false }, 2.65);
+      tl.fromTo("#staff-tv-2", { yPercent: 100 }, { yPercent: 0, duration: 0.3, ease: "power3.inOut", immediateRender: false }, 2.65);
+      tl.fromTo("#staff-msg", { opacity: 0, y: -120, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(1.8)" }, 3.05);
+      tl.fromTo("#staff-in", { opacity: 1 }, { opacity: 0, duration: 0.2, ease: "power2.in" }, 5.23);
+      window.__timelines["staff"] = tl;
+    })();
+  </script>
+</template>

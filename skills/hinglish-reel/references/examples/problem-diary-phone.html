@@ -1,0 +1,219 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "DiaryHand";
+      src: url("assets/fonts/bradley-hand-bold.ttf");
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      color: #fff;
+      font-family: "Inter", sans-serif;
+    }
+    #p1-in {
+      position: absolute;
+      inset: 0;
+    }
+    #p1-title {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 330px;
+      text-align: center;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 84px;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    #p1-title span {
+      color: #ff5a5f;
+    }
+    /* Paper booking diary */
+    #p1-diary {
+      position: absolute;
+      left: 110px;
+      top: 540px;
+      width: 560px;
+      height: 580px;
+      border-radius: 10px 22px 22px 10px;
+      background: #f3ead2;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+      background-image: repeating-linear-gradient(180deg, transparent 0 69px, #c9d6ea 69px 72px);
+      background-position: 0 92px;
+      overflow: hidden;
+    }
+    #p1-spine {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 34px;
+      background: #b8362f;
+    }
+    #p1-head {
+      position: absolute;
+      left: 64px;
+      top: 26px;
+      font-family: "JetBrains Mono", monospace;
+      font-weight: 700;
+      font-size: 30px;
+      color: #b8362f;
+      letter-spacing: 0.08em;
+    }
+    .p1-row {
+      position: absolute;
+      left: 64px;
+      font-family: "DiaryHand", cursive;
+      font-weight: 700;
+      font-size: 44px;
+      color: #253a7a;
+      white-space: nowrap;
+    }
+    .p1-strike {
+      position: absolute;
+      left: -8px;
+      right: -8px;
+      top: 52%;
+      height: 5px;
+      background: #b8362f;
+      transform-origin: 0% 50%;
+    }
+    #p1-glass {
+      position: absolute;
+      left: 300px;
+      top: 760px;
+      width: 190px;
+      height: 190px;
+    }
+    #p1-nf {
+      position: absolute;
+      left: 170px;
+      top: 940px;
+      padding: 10px 24px;
+      border: 7px solid #ff5a5f;
+      border-radius: 14px;
+      color: #ff5a5f;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 58px;
+      background: rgba(243, 234, 210, 0.92);
+    }
+    /* Ringing phone */
+    #p1-phone {
+      position: absolute;
+      left: 640px;
+      top: 560px;
+      width: 330px;
+      height: 560px;
+      border-radius: 54px;
+      background: #05080f;
+      padding: 14px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+    }
+    #p1-screen {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 42px;
+      background: #1a2436;
+      overflow: hidden;
+    }
+    .p1-call {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      padding: 18px 18px;
+      border-radius: 22px;
+      background: #f5f7fa;
+      color: #0a1220;
+    }
+    .p1-call b {
+      display: block;
+      font-size: 30px;
+      font-weight: 900;
+    }
+    .p1-call i {
+      display: block;
+      margin-top: 4px;
+      font-style: normal;
+      font-size: 24px;
+      font-weight: 700;
+      color: #5a6a85;
+    }
+    .p1-call em {
+      position: absolute;
+      right: 16px;
+      top: 22px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: #1db86a;
+    }
+    #p1-count {
+      position: absolute;
+      right: -24px;
+      top: -24px;
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      background: #ff5a5f;
+      color: #fff;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 40px;
+      line-height: 84px;
+      text-align: center;
+    }
+  </style>
+  <div id="root" data-composition-id="p1" data-width="1080" data-height="1920" data-layout-allow-overlap>
+    <div id="p1-clip" class="clip" data-start="0" data-duration="5.31">
+      <div id="p1-in">
+        <div id="p1-title">PHONE PE <span>BOOKING</span></div>
+        <div id="p1-diary">
+          <div id="p1-spine"></div>
+          <div id="p1-head">BOOKING DIARY</div>
+          <div id="p1-r1" class="p1-row" style="top: 112px">11:00 Riya - cut<div id="p1-s1" class="p1-strike"></div></div>
+          <div id="p1-r2" class="p1-row" style="top: 184px">12:30 Sneha facial</div>
+          <div id="p1-r3" class="p1-row" style="top: 256px">1:00 Pooja?? / Anju<div id="p1-s3" class="p1-strike"></div></div>
+          <div id="p1-r4" class="p1-row" style="top: 328px">3:00 Meena wax</div>
+          <div id="p1-r5" class="p1-row" style="top: 400px">4:00 ????</div>
+          <div id="p1-r6" class="p1-row" style="top: 472px">4:30 Kavya colour<div id="p1-s6" class="p1-strike"></div></div>
+          
+        </div>
+        <div id="p1-phone">
+          <div id="p1-screen">
+            <div id="p1-call1" class="p1-call" style="top: 60px"><b>Riya</b><i>Haircut, 4 baje?</i><em></em></div>
+            <div id="p1-call2" class="p1-call" style="top: 200px"><b>Unknown</b><i>Facial slot hai?</i><em></em></div>
+            <div id="p1-call3" class="p1-call" style="top: 340px"><b>Kavya</b><i>Booking cancel...</i><em></em></div>
+          </div>
+          <div id="p1-count">3</div>
+        </div>
+        <svg id="p1-glass" viewBox="0 0 100 100" fill="none" stroke="#0a1220" stroke-width="8" stroke-linecap="round">
+          <circle cx="40" cy="40" r="28" fill="rgba(255,255,255,0.35)" />
+          <path d="M61 61 L90 90" stroke-width="12" />
+        </svg>
+        <div id="p1-nf">NAAM NAHI MILA</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      // Voice: phone@1.09, booking@1.59, diary@2.38, naam@3.17, milta hi nahi@3.77–4.6
+      tl.fromTo("#p1-title", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 0.05);
+      tl.fromTo("#p1-phone", { opacity: 0, x: 260, rotation: 8 }, { opacity: 1, x: 0, rotation: 4, duration: 0.5, ease: "expo.out" }, 0.3);
+      tl.to("#p1-phone", { rotation: -3, duration: 0.06, yoyo: true, repeat: 13, ease: "none" }, 1.05);
+      ["#p1-call1", "#p1-call2", "#p1-call3"].forEach((c, i) => {
+        tl.fromTo(c, { opacity: 0, y: -40, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.3, ease: "back.out(2.2)" }, 1.1 + i * 0.28);
+      });
+      tl.fromTo("#p1-count", { scale: 0 }, { scale: 1, duration: 0.35, ease: "back.out(2.2)" }, 1.75);
+      tl.fromTo("#p1-diary", { opacity: 0, x: -300, rotation: -10 }, { opacity: 1, x: 0, rotation: -3, duration: 0.5, ease: "expo.out" }, 2.3);
+      ["#p1-s1", "#p1-s3", "#p1-s6"].forEach((s, i) => {
+        tl.fromTo(s, { scaleX: 0 }, { scaleX: 1, duration: 0.18, ease: "power2.out" }, 2.75 + i * 0.16);
+      });
+      tl.fromTo("#p1-glass", { opacity: 0, x: -120, y: -260 }, { opacity: 1, x: 0, y: 0, duration: 0.45, ease: "expo.out" }, 3.1);
+      tl.to("#p1-glass", { x: 160, duration: 0.4, ease: "sine.inOut", yoyo: true, repeat: 1 }, 3.56);
+      tl.fromTo("#p1-nf", { opacity: 0, scale: 2.2, rotation: -12 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.25, ease: "power4.in" }, 3.72);
+      tl.fromTo("#p1-in", { opacity: 1 }, { opacity: 0, duration: 0.2, ease: "power2.in" }, 5.09);
+      window.__timelines["p1"] = tl;
+    })();
+  </script>
+</template>

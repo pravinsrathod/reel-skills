@@ -1,0 +1,73 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      color: #fff;
+      font-family: "Archivo Black", sans-serif;
+    }
+    #hook-wrap {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 330px;
+      text-align: center;
+    }
+    #hook-icon {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 30px;
+    }
+    #hook-l1 {
+      font-size: 116px;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    #hook-l1 span {
+      color: {{ACCENT}};
+    }
+    #hook-l2 {
+      margin-top: 26px;
+      font-family: "JetBrains Mono", monospace;
+      font-weight: 700;
+      font-size: 34px;
+      letter-spacing: 0.16em;
+      color: #9fb0cc;
+    }
+    #hook-stamp {
+      display: inline-block;
+      margin-top: 34px;
+      padding: 18px 44px 22px;
+      border: 8px solid #ff5a5f;
+      border-radius: 22px;
+      color: #ff5a5f;
+      font-size: 120px;
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+  </style>
+  <div id="root" data-composition-id="hook" data-width="1080" data-height="1920">
+    <div id="hook-wrap" class="clip" data-start="0" data-duration="{{DUR}}">
+      <div id="hook-in">
+      {{ICON_SVG}}
+      <div id="hook-l1">{{LINE1}} <span>{{LINE1_ACCENT}}</span></div>
+      <div id="hook-l2">{{SUB}}</div>
+      <div id="hook-stamp">{{STAMP}}</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      // Frame 0 is the thumbnail: the title already stands; the stamp slams on its word.
+      tl.fromTo("#hook-icon", { rotation: -8, transformOrigin: "50% 70%" },
+        { rotation: 8, duration: 0.18, ease: "power2.inOut", yoyo: true, repeat: 3 }, 0.1);
+      tl.fromTo("#hook-l2", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.35, ease: "expo.out" }, {{SUB_AT}});
+      tl.fromTo("#hook-stamp", { opacity: 0, scale: 2.4, rotation: -10 },
+        { opacity: 1, scale: 1, rotation: -4, duration: 0.28, ease: "power4.in" }, {{STAMP_AT}});
+      tl.fromTo("#hook-in", { x: 0 }, { x: -14, duration: 0.05, yoyo: true, repeat: 3, ease: "none" }, {{SHAKE_AT}});
+      tl.fromTo("#hook-in", { opacity: 1 }, { opacity: 0, duration: 0.2, ease: "power2.in" }, {{OUT_AT}});
+      window.__timelines["hook"] = tl;
+    })();
+  </script>
+</template>
